@@ -29,7 +29,7 @@ public class StringOps {
         // Write your code here:
         String result = "";
         for (int i = 0; i < string.length(); i++) {
-            if ("aeiou".indexOf(string.charAt(i)) != -1) {
+            if ("aeiouAEIOU".indexOf(string.charAt(i)) != -1) {
                 if (string.charAt(i) >= 97 && string.charAt(i) <= 122) {
                     result += (char) (string.charAt(i) - 32);
                 } else {
@@ -49,17 +49,17 @@ public class StringOps {
     public static String camelCase(String string) {
         // Write your code here:
         String result = "";
-        boolean first = true;
         boolean capitalize = false;
-        for (int i = 0; i < string.length(); i++) {
+        string = string.substring(string.indexOf("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"));
+        if (string.charAt(0) >= 97 && string.charAt(0) <= 122) {
+            result += (char) (string.charAt(0) - 32);
+        }
+        for (int i = 1; i < string.length(); i++) {
             if (string.charAt(i) >= 97 && string.charAt(i) <= 122) {
                 if (capitalize) {
                     result += (char) (string.charAt(i) - 32);
                 } else {
                     result += string.charAt(i);
-                }
-                if (first) {
-                    first = false;
                 }
             } else if (string.charAt(i) >= 65 && string.charAt(i) <= 90) {
                 if (capitalize) {
@@ -67,13 +67,8 @@ public class StringOps {
                 } else {
                     result += (char) (string.charAt(i) + 32);
                 }
-                if (first) {
-                    first = false;
-                }
             } else {
-                if (!first) {
-                    capitalize = true;
-                }
+                capitalize = true;
             }
         }
 

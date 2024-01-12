@@ -6,10 +6,10 @@ public class ArrayOps {
     public static int findMissingInt(int[] array) {
         // Write your code here:
         int missing = 0;
-        for (int i = 0; i < array.length; i++) {
+        for (int i = 0; i <= array.length; i++) {
             boolean isMissing = true;
             for (int j = 0; j < array.length; j++) {
-                if (array[i] == j) {
+                if (array[j] == i) {
                     isMissing = false;
                     continue;
                 }
@@ -28,6 +28,7 @@ public class ArrayOps {
         int secondMax = Integer.MIN_VALUE;
         for (int i = 1; i < array.length; i++) {
             if (array[i] > max) {
+                secondMax = max;
                 max = array[i];
             } else if (array[i] >= secondMax) {
                 secondMax = array[i];
@@ -71,8 +72,7 @@ public class ArrayOps {
             return true;
         }
         int difference = array[0];
-        boolean isPositive = difference > 0;
-        boolean isNegative = difference < 0;
+        boolean isPositive = false, isNegative = false;
         for (int i = 1; i < array.length; i++) {
             difference -= array[i];
             if (difference > 0) {
