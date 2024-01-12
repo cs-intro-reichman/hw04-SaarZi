@@ -53,9 +53,6 @@ public class StringOps {
         while (string.charAt(0) == ' ') {
             string = string.substring(1);
         }
-        if (string.charAt(0) >= 97 && string.charAt(0) <= 122) {
-            result += (char) (string.charAt(0) - 32);
-        }
         for (int i = 0; i < string.length(); i++) {
             if (string.charAt(i) >= 97 && string.charAt(i) <= 122) {
                 if (capitalize) {
