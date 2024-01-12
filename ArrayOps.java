@@ -81,6 +81,7 @@ public class ArrayOps {
             if (difference < 0) {
                 isNegative = true;
             }
+            difference = array[i];
         }
         return !(isPositive && isNegative);
     }

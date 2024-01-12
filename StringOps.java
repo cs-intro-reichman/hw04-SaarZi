@@ -50,11 +50,13 @@ public class StringOps {
         // Write your code here:
         String result = "";
         boolean capitalize = false;
-        string = string.substring(string.indexOf("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"));
+        if (string.charAt(0) == ' ') {
+            string = string.substring(string.indexOf("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"));
+        }
         if (string.charAt(0) >= 97 && string.charAt(0) <= 122) {
             result += (char) (string.charAt(0) - 32);
         }
-        for (int i = 1; i < string.length(); i++) {
+        for (int i = 0; i < string.length(); i++) {
             if (string.charAt(i) >= 97 && string.charAt(i) <= 122) {
                 if (capitalize) {
                     result += (char) (string.charAt(i) - 32);
