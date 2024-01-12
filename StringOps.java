@@ -50,7 +50,7 @@ public class StringOps {
         // Write your code here:
         String result = "";
         boolean capitalize = false;
-        while (string.indexOf(' ') != -1) {
+        while (string.charAt(0) == ' ') {
             string = string.substring(1);
         }
         if (string.charAt(0) >= 97 && string.charAt(0) <= 122) {
