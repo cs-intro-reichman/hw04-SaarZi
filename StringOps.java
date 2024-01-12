@@ -60,12 +60,14 @@ public class StringOps {
             if (string.charAt(i) >= 97 && string.charAt(i) <= 122) {
                 if (capitalize) {
                     result += (char) (string.charAt(i) - 32);
+                    capitalize = false;
                 } else {
                     result += string.charAt(i);
                 }
             } else if (string.charAt(i) >= 65 && string.charAt(i) <= 90) {
                 if (capitalize) {
                     result += string.charAt(i);
+                    capitalize = false;
                 } else {
                     result += (char) (string.charAt(i) + 32);
                 }
