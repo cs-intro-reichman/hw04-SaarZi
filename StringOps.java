@@ -50,8 +50,8 @@ public class StringOps {
         // Write your code here:
         String result = "";
         boolean capitalize = false;
-        if (string.charAt(0) == ' ') {
-            string = string.substring(string.indexOf("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"));
+        while (string.indexOf(' ') != -1) {
+            string = string.substring(1);
         }
         if (string.charAt(0) >= 97 && string.charAt(0) <= 122) {
             result += (char) (string.charAt(0) - 32);
